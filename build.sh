@@ -67,7 +67,7 @@ make -j$(nproc) O=out ARCH=arm64 realme_sdm710_defconfig
                       ARCH=arm64 \
                       CC=clang \
                       CROSS_COMPILE=xRageTC/bin/aarch64-linux-gnu- \
-                      CROSS_COMPILE_ARM32=xRageTC/bin/arm-linux-gnueabi-
+                      CROSS_COMPILE_ARM32=xRageTC/bin/arm-linux-gnueabi- \
                       CONFIG_DEBUG_SECTION_MISMATCH=y -j$(nproc --all)
                       
 

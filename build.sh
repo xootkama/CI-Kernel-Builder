@@ -36,7 +36,6 @@ export KBUILD_BUILD_HOST=$BUILD_HOST # Change with your own hostname.
 IMAGE=$(pwd)/RMX1851/out/arch/arm64/boot/Image.gz-dtb
 DATE=$(date +"%F-%S")
 START=$(date +"%s")
-PATH="${PATH}:${CLANG_ROOTDIR}/bin"
 
 # Checking environtment
 # Warning !! Dont Change anything there without known reason.

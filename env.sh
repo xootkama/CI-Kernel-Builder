@@ -1,26 +1,26 @@
 #! /bin/bash
 
 # Kernel Repo
-KERNEL_REPO=https://"${AWAL}":"${AKHIR}"@github.com/fajar4561/Kernel_Asus_SDM660
+KERNEL_REPO=https://"${AWAL}":"${AKHIR}"@github.com/xootkama/CAF-test
 
 # Kernel Branch
-KERNEL_BRANCH=perf-eas
+KERNEL_BRANCH=when
 
 # The name of the device for which the kernel is built
-MODEL="Asus Zenfone Max Pro M1"
+MODEL="r3pro"
 
 # The codename of the device
-DEVICE="X00TD"
+DEVICE="RMX1851"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=X00TD_defconfig
+DEFCONFIG=realme_sdm710_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Signature
+NAMA=Idk
 
 JENIS=perf
 
@@ -34,10 +34,10 @@ BUILD_TYPE="Nightly"
 COMPILER=gcc49
 
 # Message on anykernel when installation
-MESSAGE="Salam dari kota congyang"
+MESSAGE="Installing"
 
 # KBUILD ENV
-K_USER=Thoreck
+K_USER=xootkama
 K_HOST=Github
 K_VERSION=101
 

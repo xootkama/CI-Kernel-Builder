@@ -57,24 +57,18 @@ tg_post_msg() {
 
 }
 
-# Post Main Information
-tg_post_msg "<b>xKernelCompiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
-
 # Compile
 compile(){
 tg_post_msg "<b>xKernelCompiler:</b><code>Compilation has started</code>"
-cd ${KERNEL_ROOTDIR}
+cd RMX1851
 make -j$(nproc) O=out ARCH=arm64 realme_sdm710_defconfig
-sattire=`find / -type d -name "xRageTC" 2>/dev/null`
 
-PATH="$sattire/bin:$PATH" \
- 
  ccache -c
   make                O=out \
                       ARCH=arm64 \
                       CC=clang \
-                      CROSS_COMPILE=aarch64-linux-gnu- \
-                      CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
+                      CROSS_COMPILE=xRageTC/bin/aarch64-linux-gnu- \
+                      CROSS_COMPILE_ARM32=xRageTC/bin/arm-linux-gnueabi-
                       CONFIG_DEBUG_SECTION_MISMATCH=y -j$(nproc --all)
                       
 

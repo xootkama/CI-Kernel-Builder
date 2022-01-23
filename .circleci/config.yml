@@ -2,13 +2,16 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: fajar4561/aosp-builder:latest
+      - image: xyzuan/xdocker:latest
    
    steps:
       - run:
           command: |
             git config --global user.name "fajar4561"
             git config --global user.email "maulanafajar751@gmail.com"
+            apt install libncurses5-dev  libncurses5 -y ccache unzip
+            apt update -y && apt install -y --no-install-recommends cmake ninja-build python3-pip libffi-dev python3-dev  clang bc gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi ncurses-dev
+
             curl https://raw.githubusercontent.com/xootkama/CI-Kernel-Builder/master/env.sh > env.sh
             source env.sh
             curl https://raw.githubusercontent.com/xootkama/CI-Kernel-Builder/master/build.sh > build.sh
